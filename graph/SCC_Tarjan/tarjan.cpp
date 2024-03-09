@@ -34,8 +34,9 @@ void tarjan(int root, int parent) {
     }
 }
 
-// Bridges and Articulation points 
-// Root (0) is Articulation point if it has more than 1 child
+// --- Undirected Bridges and Articulation Points ---
+// Bridges and Articulation Points 
+// Root (0) is Articulation Point if it has more than 1 child
 int main() {
     adj[0].push_back(1);
     adj[1].push_back(0);

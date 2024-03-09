@@ -12,7 +12,6 @@ vector<vector<int>> components;
 
 int counter = 0;
 
-// SCC on undirected graphs
 void tarjan(int root, int parent) {
     num[root] = counter++;
     low[root] = num[root];
@@ -42,6 +41,7 @@ void tarjan(int root, int parent) {
     }
 }
 
+// --- SCC on undirected graphs ---
 int main() {
     adj[0].push_back(1);
     adj[1].push_back(0);
