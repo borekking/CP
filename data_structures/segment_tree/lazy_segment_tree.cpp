@@ -13,7 +13,7 @@ int si;
 void init(vector<ll> &vec) {
     si = 2 << __lg(n);
     tree.resize(2*si, 0); // Init with neutral element of +-operation
-    tree.resize(2*si+1, 1); // Init with neutral element of *-operation
+    lazy.resize(2*si, 1); // Init with neutral element of *-operation
 
     for (int i = 0; i < n; i++) {
         tree[si + i] = vec[i];
@@ -41,6 +41,7 @@ void apply(int ql, int qr, int left, int right, ll value, int node) {
     // [left, right) lies completely inside of [ql, qr)
     if (ql <= left && qr >= right) {
         apply1(node, value);
+        return;
     }
 
     // [left, right) lies completely outside of [ql, qr)
